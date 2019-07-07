@@ -25,7 +25,7 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allWordpressPost(limit: 6) {
+    allWordpressPost(limit: 3) {
       edges {
         node {
           title

@@ -8,9 +8,13 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      {props.data.allWordpressWpEventos.edges.map((post, index) => (
-        <PostItem key={index} {...post} />
-      ))}
+      <div className="grid">
+        {props.data.allWordpressWpEventos.edges.map((post, index) => (
+          <div key={index} className="sm-4-12">
+            <PostItem {...post} />
+          </div>
+        ))}
+      </div>
       <div />
     </Layout>
   )
@@ -20,12 +24,13 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allWordpressWpEventos(limit: 6) {
+    allWordpressWpEventos(limit: 3) {
       edges {
         node {
           title
           date
           path
+          content
           featured_media {
             localFile {
               childImageSharp {
