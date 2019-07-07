@@ -1,0 +1,10 @@
+@media print {
+  .hide-to-print {
+    display: none;
+  }
+
+  @page {
+    size: auto;
+    margin: 0mm;
+  }
+}

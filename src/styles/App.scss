@@ -1,0 +1,66 @@
+@import "./variables.scss";
+@import "./grid.scss";
+@import "./default.scss";
+@import "./form.scss";
+@import "./themes.scss";
+@import "./helpers.scss";
+@import "./table.scss";
+@import "./print.scss";
+@import "./custom.scss";
+@import "./mixins.scss";
+@import "./template.scss";
+// @import "./../components/Header/Header.scss";
+// @import "./../components/Button/Button.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+li {
+  list-style-type: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.full-screen {
+  height: 100vh;
+  width: 100vw;
+  &-with-header {
+    height: calc(100vh - 64px);
+  }
+}
+
+.page-title {
+  font-weight: 300;
+  color: $black;
+}
+
+.rotate {
+  animation: rotate infinite linear 2s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
