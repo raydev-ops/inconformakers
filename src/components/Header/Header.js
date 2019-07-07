@@ -19,7 +19,7 @@ const Header = props => {
   const siteName = _get(site, "siteMetadata.title", "")
 
   return (
-    <div className="background-blue">
+    <div className="background-dark">
       <div className="container h-100">
         <div className="d-flex h-100 d-flex-align-center d-flex-space-between">
           <Link to="/">

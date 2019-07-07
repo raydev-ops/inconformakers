@@ -25,15 +25,15 @@ const PostItem = ({
         </div>
       )}
       <Link to={path}>
-        <h2 className="m-bottom-10 fs-5">{title}</h2>
+        <h2 className="m-bottom-10 color-white fs-5">{title}</h2>
       </Link>
       <div
-        className="fs-6 color-gray m-bottom-20 lh-26 max-h-200 overflow-hidden opacity-effect p-relative"
+        className="fs-6 color-white m-bottom-20 lh-26 max-h-200 overflow-hidden opacity-effect p-relative"
         dangerouslySetInnerHTML={{
           __html: excerpt || content,
         }}
       />
-      <Link style={{ color: "blue" }} to={path}>
+      <Link className="color-white" to={path}>
         Ler Mais
       </Link>
     </div>

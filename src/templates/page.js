@@ -8,8 +8,14 @@ class PageTemplate extends Component {
 
     return (
       <Layout>
-        <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-        <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+        <h1
+          className="m-bottom-20 fs-custom color-white"
+          dangerouslySetInnerHTML={{ __html: currentPage.title }}
+        />
+        <div
+          className="content_ color-white m-bottom-100"
+          dangerouslySetInnerHTML={{ __html: currentPage.content }}
+        />
       </Layout>
     )
   }

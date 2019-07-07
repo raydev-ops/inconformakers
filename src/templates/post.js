@@ -9,11 +9,11 @@ class PostTemplate extends Component {
     return (
       <Layout hideSidebar>
         <h1
-          className="m-bottom-20 fs-custom"
+          className="m-bottom-20 fs-custom color-white"
           dangerouslySetInnerHTML={{ __html: post.title }}
         />
         <div
-          className="content_"
+          className="content_ color-white m-bottom-100"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </Layout>

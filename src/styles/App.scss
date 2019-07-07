@@ -19,6 +19,11 @@
   font-family: "Lora", serif;
 }
 
+html {
+  height: 100%;
+  background: $black;
+}
+
 a {
   text-decoration: none;
   color: $black;

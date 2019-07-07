@@ -175,6 +175,9 @@
   &-gray {
     color: $gray;
   }
+  &-lightbrown {
+    color: $lightbrown;
+  }
 }
 
 .background {
@@ -211,6 +214,9 @@
 
   &-transparent {
     background: transparent;
+  }
+  &-lightbrown {
+    background: $lightbrown;
   }
 }
 
@@ -385,7 +391,7 @@
 .opacity-effect {
   &:after {
     content: "";
-    background: linear-gradient(to bottom, #b5a6a600, white);
+    background: linear-gradient(to bottom, transparent, $black);
     z-index: 111;
     position: absolute;
     width: 100%;
