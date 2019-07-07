@@ -10,9 +10,15 @@ const IndexPage = ({ pageContext }) => {
   return (
     <Layout>
       <div>
-        {group.map(({ node }, index) => {
-          return <PostItem key={index} node={node} />
-        })}
+        <div className="grid">
+          {group.map(({ node }, index) => {
+            return (
+              <div className="sm-4-12">
+                <PostItem key={index} node={node} />
+              </div>
+            )
+          })}
+        </div>
         {!first && <Link to={`posts/${previousUrl}`}>Página anterior</Link>}
         {!last && <Link to={`posts/${nextUrl}`}>Próxima página</Link>}
       </div>

@@ -84,7 +84,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const eventTemplate = path.resolve(`./src/templates/evento.js`)
 
   allWordpressPage.edges.forEach(edge => {
-    const template = edge.node.path.includes('contato') ? customPage : pageTemplate
+    const template = edge.node.path.includes("contato")
+      ? customPage
+      : pageTemplate
     createPage({
       path: edge.node.path,
       component: slash(template),
@@ -98,7 +100,7 @@ exports.createPages = async ({ graphql, actions }) => {
     edges: allWordpressPost.edges,
     createPage: createPage,
     pageTemplate: "src/templates/posts.js",
-    pageLength: 2,
+    pageLength: 6,
     pathPrefix: "posts",
   })
 
@@ -110,6 +112,14 @@ exports.createPages = async ({ graphql, actions }) => {
         id: edge.node.id,
       },
     })
+  })
+
+  createPaginatedPages({
+    edges: allWordpressWpEventos.edges,
+    createPage: createPage,
+    pageTemplate: "src/templates/posts.js",
+    pageLength: 1,
+    pathPrefix: "nossos-eventos",
   })
 
   allWordpressWpEventos.edges.forEach(edge => {
