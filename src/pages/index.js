@@ -3,8 +3,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/PageWrapper"
 import SEO from "../components/seo"
 import PostItem from "../components/PostItem"
+import { recordUser } from "../services/database"
+import { logout } from "../services/auth"
 
 const IndexPage = props => {
+  recordUser()
+  // logout()
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
