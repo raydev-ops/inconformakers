@@ -1,7 +1,7 @@
 import { FBdb } from "./firebaseConfig"
 
 export const logDB = () => {
-  FBdb.collection("users")
+  FBdb.collection("user")
     .get()
     .then(snap => {
       snap.forEach(doc => {
@@ -11,16 +11,8 @@ export const logDB = () => {
     .catch(error => error)
 }
 
-export const recordUser = async () => {
-  try {
-    await FBdb.collection("users")
-      .doc()
-      .set({
-        name: "Sérgio",
-        age: 28,
-      })
-    console.log("success")
-  } catch (error) {
-    console.log("error", error)
-  }
+export const RegisterUser = user => {
+  return FBdb.collection("user")
+    .doc()
+    .set(user)
 }

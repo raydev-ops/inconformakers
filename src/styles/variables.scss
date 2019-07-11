@@ -10,11 +10,13 @@ $primary: #3276b5;
 $danger: #ed3833;
 $success: #34b351;
 $lightbrown: #d8cec2;
+$theme: #982dd6;
 $xs: 320px;
 $sm: 768px;
 $md: 992px;
 $lg: 1200px;
 
+$themeDark: darken($theme, 10%);
 $blueDark: darken($blue, 10%);
 $redDark: darken($red, 10%);
 $acquaDark: darken($acqua, 10%);
@@ -27,6 +29,7 @@ $successDark: darken($success, 10%);
 $whiteDark: darken($white, 10%);
 $lightbrownDark: darken($lightbrown, 10%);
 
+$themeLight: lighten($theme, 10%);
 $blueLight: lighten($blue, 10%);
 $redLight: lighten($red, 10%);
 $acquaLight: lighten($acqua, 10%);
