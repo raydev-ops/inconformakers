@@ -19,7 +19,7 @@ const Input = props => {
       {label && (
         <label
           htmlFor={name}
-          className="label tt-uppercase fs-custom color-white fw-bold fs-8 m-bottom-5 d-block"
+          className="label tt-uppercase fs-custom fw-bold fs-8 m-bottom-5 d-block"
         >
           {label}
         </label>

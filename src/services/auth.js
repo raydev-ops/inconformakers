@@ -1,11 +1,11 @@
 import { FBauth } from "./firebaseConfig"
 console.log("run")
 
-export const login = (email, password) => {
+export const LoginFN = (email, password) => {
   return FBauth.signInWithEmailAndPassword(email, password)
 }
 
-export const createUser = (email, password) => {
+export const CreateUserFN = (email, password) => {
   return FBauth.createUserWithEmailAndPassword(email, password)
 }
 
@@ -16,6 +16,6 @@ FBauth.onAuthStateChanged(user => {
   console.log("not logout")
 })
 
-export const logout = () => {
+export const LogoutFN = () => {
   FBauth.signOut()
 }
