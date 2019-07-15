@@ -1,7 +1,18 @@
 import React from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
+import { LogoutFN } from "../../services/auth"
 
 class MainMenu extends React.Component {
+  onLogoutHandler = e => {
+    e.preventDefault()
+    LogoutFN()
+  }
+
+  onLoginHandler = e => {
+    e.preventDefault()
+    console.log("open Login")
+  }
+
   render() {
     return (
       <StaticQuery
@@ -35,6 +46,38 @@ class MainMenu extends React.Component {
                     </li>
                   )
                 }
+              )}
+              {this.props.isLogged ? (
+                <li className="m-left-10">
+                  <a
+                    onClick={this.onLogoutHandler}
+                    className="color-white tt-uppercase fs-custom"
+                    href="#"
+                  >
+                    Sair
+                  </a>
+                </li>
+              ) : (
+                <React.Fragment>
+                  <li className="m-left-10">
+                    <a
+                      onClick={this.props.openLoginHandler}
+                      className="color-white tt-uppercase fs-custom"
+                      href="#"
+                    >
+                      Login
+                    </a>
+                  </li>
+                  <li className="m-left-10">
+                    <a
+                      onClick={this.props.openCreateUserHandler}
+                      className="color-white tt-uppercase fs-custom"
+                      href="#"
+                    >
+                      Criar Conta
+                    </a>
+                  </li>
+                </React.Fragment>
               )}
             </ul>
           )

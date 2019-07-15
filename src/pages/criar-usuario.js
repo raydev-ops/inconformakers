@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/PageWrapper"
-import SEO from "../components/seo"
 import Input from "../components/Input"
 import Button from "./../components/Button"
 import { RegisterUser } from "../services/database"
