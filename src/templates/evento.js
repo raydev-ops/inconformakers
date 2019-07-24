@@ -1,10 +1,28 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Layout from "./../components/PageWrapper"
+import { WatchAuth } from "../services/auth"
+
+const stateDefault = {
+  user: {},
+  isLoading: true,
+}
 
 class EventTemplate extends Component {
+  state = stateDefault
+
+  componentDidMount = () => {
+    WatchAuth(user => {
+      console.log("user", user)
+      this.setState({
+        user,
+      })
+    })
+  }
+
   render() {
     const post = this.props.data.wordpressWpEventos
+
     return (
       <Layout>
         <h1
@@ -27,6 +45,9 @@ export const pageQuery = graphql`
     wordpressWpEventos(id: { eq: $id }) {
       title
       content
+      acf {
+        key
+      }
     }
   }
 `

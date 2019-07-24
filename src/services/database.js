@@ -11,8 +11,8 @@ export const logDB = () => {
     .catch(error => error)
 }
 
-export const RegisterUser = user => {
+export const RegisterUser = (user, id = "") => {
   return FBdb.collection("user")
-    .doc()
+    .doc(id)
     .set(user)
 }

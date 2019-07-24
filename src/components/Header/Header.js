@@ -18,7 +18,6 @@ const Header = props => {
   const updateModalContentHandler = (modal = null) => {
     updateModalContent(modal)
   }
-  console.log("modal", modal)
   const { site } = useStaticQuery(
     graphql`
       query {

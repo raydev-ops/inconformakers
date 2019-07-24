@@ -1,5 +1,4 @@
 import React from "react"
-import SEO from "./../seo"
 import Input from "../Input"
 import Button from "./../Button"
 import { RegisterUser } from "../../services/database"
@@ -33,7 +32,8 @@ const CreateUser = props => {
     e.preventDefault()
     try {
       const { email, senha, confirmarSenha, ...otherProps } = user
-      await CreateUserFN(email, senha)
+      const { uid } = await CreateUserFN(email, senha)
+      console.log(uid)
       await RegisterUser({ ...otherProps, email })
       setUser(stateDefault)
     } catch (error) {}

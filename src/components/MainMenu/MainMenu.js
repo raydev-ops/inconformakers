@@ -52,7 +52,7 @@ class MainMenu extends React.Component {
                   <a
                     onClick={this.onLogoutHandler}
                     className="color-white tt-uppercase fs-custom"
-                    href="#"
+                    href="/#"
                   >
                     Sair
                   </a>
@@ -63,7 +63,7 @@ class MainMenu extends React.Component {
                     <a
                       onClick={this.props.openLoginHandler}
                       className="color-white tt-uppercase fs-custom"
-                      href="#"
+                      href="/#"
                     >
                       Login
                     </a>
@@ -72,7 +72,7 @@ class MainMenu extends React.Component {
                     <a
                       onClick={this.props.openCreateUserHandler}
                       className="color-white tt-uppercase fs-custom"
-                      href="#"
+                      href="/#"
                     >
                       Criar Conta
                     </a>
