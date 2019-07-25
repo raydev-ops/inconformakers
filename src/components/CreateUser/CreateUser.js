@@ -32,12 +32,14 @@ const CreateUser = props => {
     e.preventDefault()
     try {
       const { email, senha, confirmarSenha, ...otherProps } = user
-      const { uid } = await CreateUserFN(email, senha)
-      console.log(uid)
-      await RegisterUser({ ...otherProps, email })
-      setUser(stateDefault)
+      const {
+        user: { uid },
+      } = await CreateUserFN(email, senha)
+      await RegisterUser({ ...otherProps, email }, uid)
+      props.onClose()
     } catch (error) {}
   }
+
   return (
     <div className="">
       <div className="d-flex d-flex-space-between d-flex-align-center">

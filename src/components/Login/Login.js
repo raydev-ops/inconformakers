@@ -19,10 +19,9 @@ const Login = props => {
   const onSubmitHandler = async e => {
     e.preventDefault()
     try {
-      const { onClose } = props
       const { email, senha } = user
       await LoginFN(email, senha)
-      onClose()
+      props.onClose()
     } catch (error) {}
   }
   return (
