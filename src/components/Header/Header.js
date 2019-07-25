@@ -44,10 +44,12 @@ const Header = props => {
                 <MainMenu
                   {...props}
                   {...selfProps}
-                  openLoginHandler={() => {
+                  openLoginHandler={e => {
+                    e.preventDefault()
                     updateModalContentHandler("login")
                   }}
-                  openCreateUserHandler={() => {
+                  openCreateUserHandler={e => {
+                    e.preventDefault()
                     updateModalContentHandler("createUser")
                   }}
                 />

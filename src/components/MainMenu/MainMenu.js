@@ -8,11 +8,6 @@ class MainMenu extends React.Component {
     LogoutFN()
   }
 
-  onLoginHandler = e => {
-    e.preventDefault()
-    console.log("open Login")
-  }
-
   render() {
     return (
       <StaticQuery
