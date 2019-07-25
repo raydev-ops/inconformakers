@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+<div
+  className="m-bottom-40 input-wrapper w-100 "
+>
+  <input
+    className="fs-custom"
+  />
+</div>
+`;
