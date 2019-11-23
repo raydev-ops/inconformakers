@@ -17,14 +17,6 @@ const IndexPage = props => {
             </div>
           ))}
         </div>
-        <h2 className="m-bottom-20 color-white tt-uppercase">Eventos</h2>
-        <div className="grid m-bottom-50">
-          {props.data.allWordpressWpEventos.edges.map((post, index) => (
-            <div key={index} className="sm-4-12">
-              <PostItem {...post} />
-            </div>
-          ))}
-        </div>
       </div>
       <div />
     </Layout>
@@ -42,27 +34,6 @@ export const query = graphql`
           date
           excerpt
           path
-          featured_media {
-            localFile {
-              childImageSharp {
-                resolutions {
-                  src
-                  width
-                  height
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    allWordpressWpEventos(limit: 3) {
-      edges {
-        node {
-          title
-          date
-          path
-          content
           featured_media {
             localFile {
               childImageSharp {

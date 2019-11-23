@@ -1,5 +1,5 @@
 import React from "react"
-import MainMenu from "../MainMenu"
+// import MainMenu from "../MainMenu"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import _get from "lodash/get"
 import Modal from "../Modal/Modal"
@@ -41,7 +41,7 @@ const Header = props => {
                 <Link to="/">
                   <h1 className="color-white fs-custom">{siteName}</h1>
                 </Link>
-                <MainMenu
+                {/* <MainMenu
                   {...props}
                   {...selfProps}
                   openLoginHandler={e => {
@@ -52,7 +52,7 @@ const Header = props => {
                     e.preventDefault()
                     updateModalContentHandler("createUser")
                   }}
-                />
+                /> */}
               </div>
             </div>
           </div>

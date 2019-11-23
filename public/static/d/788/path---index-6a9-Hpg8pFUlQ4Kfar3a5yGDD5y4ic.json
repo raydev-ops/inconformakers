@@ -1,1 +1,0 @@
-{"errors":[{"message":"Cannot query field \"allWordpressWpGallery\" on type \"Query\". Did you mean \"allWordpressPage\", \"allWordpressWpMedia\", \"allWordpressPost\", \"wordpressPage\", or \"wordpressWpMedia\"?","locations":[{"line":2,"column":3}]}],"pageContext":{"isCreatedByStatefulCreatePages":true}}

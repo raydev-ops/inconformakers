@@ -65,7 +65,6 @@ module.exports = {
           "**/media",
           "**/taxonomies",
           "**/menus",
-          "**/eventos",
         ],
         normalizer: function({ entities }) {
           return entities
