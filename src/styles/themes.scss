@@ -19,6 +19,10 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.ongs-image {
+  width: 100px;
+}
+
 .image-preview {
   height: 200px;
   width: 100%;
@@ -26,4 +30,10 @@
   background-size: cover;
   background-position: center;
   border-radius: 2px;
+}
+
+.main-background {
+  // background-image: url("./../images/dims.jpeg");
+  background: $black;
+  height: calc(100vh - 100px);
 }

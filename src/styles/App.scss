@@ -15,17 +15,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lora", serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 html {
   height: 100%;
-  background: $black;
 }
 
 a {
   text-decoration: none;
-  color: $black;
 }
 
 body {
@@ -40,6 +38,10 @@ li {
 a,
 button {
   cursor: pointer;
+}
+
+img {
+  width: 100%;
 }
 
 .full-screen {
