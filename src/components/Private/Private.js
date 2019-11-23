@@ -13,7 +13,6 @@ class Private extends React.Component {
 
   render() {
     const { Component } = this.props
-    console.log("private")
     return <Component {...this.state} />
   }
 }

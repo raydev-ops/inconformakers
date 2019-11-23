@@ -1,8 +1,8 @@
 import React from "react"
-import { graphql, StaticQuery, Link } from "gatsby"
-import { LogoutFN } from "../../services/auth"
+// import { graphql, StaticQuery, Link } from "gatsby"
+// import { LogoutFN } from "../../services/auth"
 
-const MainMenu = () => <p>MEnu</p>
+const MainMenu = () => <p>Menu</p>
 
 export default MainMenu
 
