@@ -33,7 +33,22 @@
 }
 
 .main-background {
-  // background-image: url("./../images/dims.jpeg");
-  background: $black;
+  background-image: url("./../images/grupo.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
   height: calc(100vh - 100px);
+  &:after {
+    background: #2e3039d6;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.header {
+  z-index: 2;
 }
