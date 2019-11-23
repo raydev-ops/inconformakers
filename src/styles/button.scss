@@ -1,18 +1,18 @@
 @import "./variables.scss";
 
 .btn {
-  padding: 10px 20px;
+  padding: 0px 20px;
   font-size: 12px;
   cursor: pointer;
   color: $white;
-  height: 64px;
+  height: 50px;
+  line-height: 50px;
   font-weight: bold;
-  width: 100%;
-  background: $theme;
+  background: $blue;
   border: 0;
   transition: background ease 0.2s;
   &:hover {
-    background: $themeDark;
+    background: $blueDark;
   }
   &-second {
     background: $white;
