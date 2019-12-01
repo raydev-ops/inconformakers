@@ -2,9 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import _get from "lodash/get"
+import MainMenu from "../MainMenu/MainMenu"
 
 const Header = ({ absolute }) => {
-  const { site } = useStaticQuery(
+  const { site, allWordpressWpApiMenusMenusItems } = useStaticQuery(
     graphql`
       query {
         site {
@@ -12,11 +13,22 @@ const Header = ({ absolute }) => {
             title
           }
         }
+        allWordpressWpApiMenusMenusItems {
+          edges {
+            node {
+              items {
+                title
+                url
+              }
+            }
+          }
+        }
       }
     `
   )
 
   const siteName = _get(site, "siteMetadata.title", "")
+  const menu = allWordpressWpApiMenusMenusItems.edges[0].node.items
   return (
     <div
       className={`m-bottom-50 header w-100 ${
@@ -28,28 +40,7 @@ const Header = ({ absolute }) => {
           <Link to="/">
             <h1 className="color-white fs-5">{siteName}</h1>
           </Link>
-          <ul className="d-flex">
-            <li>
-              <Link to="/" className="color-white m-left-20">
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link to="/eventos" className="color-white m-left-20">
-                Eventos
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="color-white m-left-20">
-                Quem Somos
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="color-white m-left-20">
-                Fazer parte
-              </Link>
-            </li>
-          </ul>
+          <MainMenu menu={menu} />
         </div>
       </div>
     </div>
