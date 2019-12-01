@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import _get from "lodash/get"
 import PageWrapper from "../components/PageWrapper"
 import SEO from "../components/seo"
-import Image from "./../images/show.jpg"
 import GAS from "./../images/ong.png"
 import Button from "../components/Button"
 import PostItem from "../components/PostItem"
@@ -15,11 +14,7 @@ const IndexPage = props => {
       <SEO title="Home" keywords={["gatsby", "application", "react"]} />
       <div className="main-background">
         <div className="container p-relative z-i-1">
-          <div className="main-description d-flex d-flex-column h-100 d-flex-end p-bottom-60">
-            {/* <h2 className="color-white fs-6">
-              Mudar não é só possível; mudar é necessário.
-            </h2> */}
-          </div>
+          <div className="main-description d-flex d-flex-column h-100 d-flex-end p-bottom-60"></div>
         </div>
       </div>
       <div>

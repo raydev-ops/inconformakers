@@ -35,7 +35,7 @@ const Header = ({ absolute }) => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="color-white m-left-20">
+              <Link to="/eventos" className="color-white m-left-20">
                 Eventos
               </Link>
             </li>

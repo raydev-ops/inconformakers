@@ -11,3 +11,16 @@
     display: inline-block;
   }
 }
+
+.inline-card {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    &-image-wrapper {
+      max-width: 300px;
+      margin-right: 15px;
+    }
+    &-content-wrapper {
+      width: calc(100% - 300px);
+    }
+  }
+}

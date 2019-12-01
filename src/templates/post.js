@@ -5,16 +5,24 @@ import PageWrapper from "./../components/PageWrapper"
 
 class PostTemplate extends Component {
   render() {
-    const post = this.props.data.wordpressPost
+    const post = this.props.data.wordpressPost.title
+    const acf = this.props.data.wordpressPost.acf
+
     return (
       <PageWrapper>
-        <div className="container">
+        <div className="container m-bottom-50">
           <h1
-            className="m-bottom-20 fs-custom color-white_"
+            className="m-bottom-20 fs-custom"
             dangerouslySetInnerHTML={{ __html: post.title }}
           />
+          <p className="m-bottom-5 color-dark">
+            <span className=" tt-uppercas color-gray">Onde:</span> {acf.data}
+          </p>
+          <p className="m-bottom-15 color-dark">
+            <span className=" tt-uppercas color-gray">Quando:</span> {acf.onde}
+          </p>
           <div
-            className="content_ color-white_ m-bottom-100_"
+            className="content_ color-dark"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
@@ -35,6 +43,11 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      acf {
+        data
+        horario
+        onde
+      }
     }
   }
 `

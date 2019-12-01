@@ -7,10 +7,8 @@ const PageWrapper = ({ children, ...otherProps }) => {
     <>
       <div className="template">
         <Header {...otherProps} />
-        <main className="container_ w-100">
-          <div className="grid">
-            <div className={"sm-12-12 overflow-scroll"}>{children}</div>
-          </div>
+        <main className="w-100">
+          <div>{children}</div>
         </main>
       </div>
     </>

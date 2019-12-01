@@ -5,3 +5,8 @@ export const formatUserInfo = user => {
     uid,
   }
 }
+
+export const formatException = content => {
+  const index = content.indexOf(".")
+  return `${content.slice(0, index)}...`
+}
