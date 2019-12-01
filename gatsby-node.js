@@ -1,5 +1,5 @@
-const path = require(`path`)
-const slash = require(`slash`)
+const path = require("path")
+const slash = require("slash")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -23,6 +23,11 @@ exports.createPages = async ({ graphql, actions }) => {
             status
             template
             format
+            acf {
+              data
+              horario
+              onde
+            }
           }
         }
       }
@@ -35,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { allWordpressPage, allWordpressPost } = result.data
 
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const pageTemplate = path.resolve("./src/templates/page.js")
   allWordpressPage.edges.forEach(edge => {
     createPage({
       path: edge.node.path,
@@ -46,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const postTemplate = path.resolve(`./src/templates/post.js`)
+  const postTemplate = path.resolve("./src/templates/post.js")
   allWordpressPost.edges.forEach(edge => {
     createPage({
       path: edge.node.path,

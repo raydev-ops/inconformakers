@@ -1,20 +1,24 @@
 import React from "react"
+import { graphql } from "gatsby"
+import _get from "lodash/get"
 import PageWrapper from "../components/PageWrapper"
 import SEO from "../components/seo"
 import Image from "./../images/show.jpg"
 import GAS from "./../images/ong.png"
 import Button from "../components/Button"
+import PostItem from "../components/PostItem"
 
-const IndexPage = () => {
+const IndexPage = props => {
+  const posts = _get(props, "data.allWordpressPost.edges", [])
   return (
     <PageWrapper absolute>
       <SEO title="Home" keywords={["gatsby", "application", "react"]} />
       <div className="main-background">
         <div className="container p-relative z-i-1">
           <div className="main-description d-flex d-flex-column h-100 d-flex-end p-bottom-60">
-            <h2 className="color-white fs-6">
+            {/* <h2 className="color-white fs-6">
               Mudar não é só possível; mudar é necessário.
-            </h2>
+            </h2> */}
           </div>
         </div>
       </div>
@@ -24,63 +28,9 @@ const IndexPage = () => {
             Próximos eventos
           </p>
           <div className="grid">
-            <div className="sm-4-12">
-              <img src={Image} />
-              <p className="fs-6 m-bottom-10 m-top-10">Lavanderia</p>
-              <p>
-                <span className="fs-8 fw-bold tt-uppercas color-gray">
-                  Onde:
-                </span>{" "}
-                WeWork
-              </p>
-              <p>
-                <span className="fs-8 fw-bold tt-uppercas color-gray">
-                  Quando:
-                </span>{" "}
-                10/11/2019
-              </p>
-              <a href="/#" className="btn w-100 d-block p-center m-top-20">
-                Detalhes
-              </a>
-            </div>
-            <div className="sm-4-12">
-              <img src={Image} />
-              <p className="fs-6 m-bottom-10 m-top-10">Lavanderia</p>
-              <p>
-                <span className="fs-8 fw-bold tt-uppercas color-gray">
-                  Onde:
-                </span>{" "}
-                WeWork
-              </p>
-              <p>
-                <span className="fs-8 fw-bold tt-uppercas color-gray">
-                  Quando:
-                </span>{" "}
-                10/11/2019
-              </p>
-              <a href="/#" className="btn w-100 d-block p-center m-top-20">
-                Detalhes
-              </a>
-            </div>
-            <div className="sm-4-12">
-              <img src={Image} />
-              <p className="fs-6 m-bottom-10 m-top-10">Lavanderia</p>
-              <p>
-                <span className="fs-8 fw-bold tt-uppercas color-gray">
-                  Onde:
-                </span>{" "}
-                WeWork
-              </p>
-              <p>
-                <span className="fs-8 fw-bold tt-uppercas color-gray">
-                  Quando:
-                </span>{" "}
-                10/11/2019
-              </p>
-              <a href="/#" className="btn w-100 d-block p-center m-top-20">
-                Detalhes
-              </a>
-            </div>
+            {posts.map(({ node }, index) => {
+              return <PostItem isLast={index !== 2} key={node.id} {...node} />
+            })}
           </div>
         </div>
       </div>
@@ -186,3 +136,34 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    allWordpressPost {
+      edges {
+        node {
+          id
+          title
+          path
+          status
+          template
+          format
+          featured_media {
+            localFile {
+              childImageSharp {
+                resolutions(width: 600, height: 400) {
+                  src
+                }
+              }
+            }
+          }
+          acf {
+            data
+            horario
+            onde
+          }
+        }
+      }
+    }
+  }
+`
