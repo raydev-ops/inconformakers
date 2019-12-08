@@ -1,5 +1,6 @@
 import React from "react"
 import _get from "lodash/get"
+import PropTypes from "prop-types"
 import { WatchAuth } from "../services/auth"
 
 const Engajamento = props => {
