@@ -37,6 +37,7 @@
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
+    "lint-staged": ">=8",
     "prettier": "^1.16.4",
     "react-test-renderer": "^16.8.6"
   },
@@ -54,17 +55,17 @@
     "test": "jest",
     "lint": "./node_modules/.bin/eslint src/**/*.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

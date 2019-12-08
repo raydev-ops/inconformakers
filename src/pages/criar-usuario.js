@@ -18,7 +18,7 @@ const stateDefault = {
   talentos: "",
 }
 
-const IndexPage = props => {
+const IndexPage = () => {
   const [user, setUser] = React.useState(stateDefault)
   const onChangeHandler = ({ target: { value, name } }) =>
     setUser({
@@ -31,7 +31,9 @@ const IndexPage = props => {
     try {
       await RegisterUser(user)
       setUser(stateDefault)
-    } catch (error) {}
+    } catch (error) {
+      setUser(stateDefault)
+    }
   }
   return (
     <Layout>
