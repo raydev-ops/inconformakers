@@ -15,13 +15,11 @@ export const WatchAuth = fn => {
 
 export const WatchAndGetUserDetails = fn => {
   return FBauth.onAuthStateChanged(async user => {
-    try {
-      const details = await GetSingleUser(user.uid)
-      fn({
-        ...details,
-        uid: user.uid,
-      })
-    } catch (error) {}
+    const details = await GetSingleUser(user.uid)
+    fn({
+      ...details,
+      uid: user.uid,
+    })
   })
 }
 
