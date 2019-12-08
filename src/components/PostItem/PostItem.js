@@ -1,6 +1,18 @@
 import React from "react"
 import _get from "lodash/get"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
+
+PostItem.propTypes = {
+  isLast: PropTypes.bool.isRequired,
+  path: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  featured_media: PropTypes.string.isRequired,
+  acf: PropTypes.shape({
+    data: PropTypes.string.isRequired,
+    onde: PropTypes.string.isRequired,
+  }),
+}
 
 const PostItem = ({
   isLast,
