@@ -1,6 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
-import _get from "lodash/get"
+import { graphql, Link } from "gatsby"
+import PropTypes from "prop-types"
 import PageWrapper from "../components/PageWrapper"
 import SEO from "../components/seo"
 import GAS from "./../images/ong.png"
@@ -8,7 +8,8 @@ import Button from "../components/Button"
 import PostItem from "../components/PostItem"
 
 const IndexPage = props => {
-  const posts = _get(props, "data.allWordpressPost.edges", [])
+  const posts = props.data.allWordpressPost.edges
+  const menu = props.data.allWordpressWpApiMenusMenusItems.edges[0].node.items
   return (
     <PageWrapper absolute>
       <SEO title="Home" keywords={["gatsby", "application", "react"]} />
@@ -112,16 +113,22 @@ const IndexPage = props => {
         </div>
       </div>
       <div className="background-darker">
-        <div className="container p-top-100 p-bottom-100">
+        <div className="container p-top-20 p-bottom-20">
           <div className="grid">
             <div className="sm-6-12">
               <p className=" color-white">InconforMakers</p>
             </div>
 
             <div className="sm-6-12 p-right">
-              <p className=" color-white">
-                Inicio, Eventos, Quem Somos, Fazer parte
-              </p>
+              <ul>
+                {menu.map(({ title, url }) => (
+                  <li key={url} className="m-left-10 d-inline">
+                    <Link className="color-white" to={url}>
+                      {title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -132,9 +139,20 @@ const IndexPage = props => {
 
 export default IndexPage
 
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allWordpressPost: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+    allWordpressWpApiMenusMenusItems: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }).isRequired,
+}
+
 export const query = graphql`
   query {
-    allWordpressPost {
+    allWordpressPost(limit: 3) {
       edges {
         node {
           id
@@ -156,6 +174,16 @@ export const query = graphql`
             data
             horario
             onde
+          }
+        }
+      }
+    }
+    allWordpressWpApiMenusMenusItems {
+      edges {
+        node {
+          items {
+            title
+            url
           }
         }
       }

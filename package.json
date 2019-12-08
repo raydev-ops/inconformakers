@@ -34,6 +34,7 @@
   "devDependencies": {
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.2.8",
+    "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "prettier": "^1.16.4",
@@ -50,7 +51,14 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "jest"
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint src/**/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
   },
   "repository": {
     "type": "git",

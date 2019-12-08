@@ -14,10 +14,7 @@ const NotFoundPage = props => {
           const img =
             node.featured_media.localFile.childImageSharp.resolutions.src
           return (
-            <div
-              key={node.id}
-              className="m-bottom-30 p-bottom-30 bb-lightdarken inline-card"
-            >
+            <div key={node.id} className="m-bottom-30 p-bottom-30 inline-card">
               <div className="w-100 inline-card-image-wrapper">
                 <img src={img} />
               </div>
