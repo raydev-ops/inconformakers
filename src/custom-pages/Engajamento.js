@@ -15,7 +15,7 @@ const Engajamento = props => {
       {isLogged ? (
         <div>
           <p className="color-white">Fazer download</p>
-          <a target="_blank" className="color-white" href={fileURL}>
+          <a target="blank" className="color-white" href={fileURL}>
             Download
           </a>
         </div>
